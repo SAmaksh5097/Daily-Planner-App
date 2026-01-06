@@ -24,7 +24,7 @@ const Notepad = () => {
             <button className='text-xs text-blue-400 cursor-pointer' onClick={clear}>Clear</button>
         </div>
 
-        <textarea name="note" id="" value={data} onChange={handleChange} placeholder='Write your notes...' className='border w-full rounded-2xl  bg-yellow-50 border-yellow-200 text-black p-1 resize-none min-h-[90%] overflow-hidden dark:bg-gray-700 dark:text-white '>
+        <textarea name="note" id="" value={data} onChange={handleChange} placeholder='Write your notes...' className='border w-[100%] rounded-2xl  bg-yellow-50 border-yellow-200 text-black p-1 resize-none min-h-[90%]  dark:bg-gray-700 dark:text-white '>
 
         </textarea>
       
