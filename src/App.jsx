@@ -4,9 +4,9 @@ import QuickActions from "./QuickActions"
 import SideBar from "./SideBar"
 function App() {
   return (
-    <div className="min-h-screen max-h-full flex flex-col  bg-gray-300 transition-all ease-in-out dark:bg-neutral-800 dark:text-white">
+    <div className="min-h-screen max-h-full flex flex-col transition-all ease-in-out bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50">
       <Header/>
-      <div className="flex h-screen bg-red-50 dark:bg-gray-600 max-w-screen ">
+      <div className="flex h-screen bg-transparent dark:bg-gray-600 max-w-screen ">
         <SideBar/>
         <PlannerGrid/>
         <QuickActions/>

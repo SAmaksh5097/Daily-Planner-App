@@ -25,9 +25,9 @@ const Weather = () => {
         </h1> */}
         <h1 className='flex gap-4 items-center text-2xl font-bold'><span className='flex text-4xl'>{temp}°C </span></h1>
         <div className='grid grid-cols-2 gap-3 '>
-            <h1>RealFeel: {data?.current?.apparent_temperature}°C</h1>
-            <h1>Humidity: {data?.current?.relative_humidity_2m}%</h1>
-            <h1>Wind: {data?.current?.wind_speed_10m} km/h</h1>
+            <h1 className='text-blue-100'>RealFeel: {data?.current?.apparent_temperature}°C</h1>
+            <h1 className='text-blue-100'>Humidity: {data?.current?.relative_humidity_2m}%</h1>
+            <h1 className='text-blue-100'>Wind: {data?.current?.wind_speed_10m} km/h</h1>
         </div>
         {data?.current?.is_day===1?<Sun className='absolute right-1 top-2'/>:<MoonStar className='absolute right-1 top-2'/>}
     </div>

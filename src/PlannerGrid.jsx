@@ -11,7 +11,7 @@ const PlannerGrid = () => {
 
   const dailytasks = tasks.filter(task=>task.date===selectedDate)
   return (
-    <div className='w-[60%] px-10 py-5 bg-gray-300 dark:bg-neutral-800 flex flex-col gap-1 items-center relative'>
+    <div className='w-[60%] px-10 py-5 bg-slate-100 dark:bg-slate-900 border-x border-slate-200 dark:border-slate-800 flex flex-col gap-1 items-center relative'>
       <div className='flex gap-4'>
         <input type="date" value={selectedDate} onChange={changeDate} />
       </div>
@@ -21,7 +21,7 @@ const PlannerGrid = () => {
            <Form />
         </div>
       )}
-      <div className='border h-full rounded-2xl p-4 flex flex-col items-center justify-center dark:bg-gray-600 w-full'>
+      <div className='border h-full rounded-2xl p-4 flex flex-col items-center justify-center w-full bg-white dark:bg-slate-800 shadow-sm border-slate-200 dark:border-slate-700'>
         {dailytasks.length}
         <h1>Planner grid. tasks will be shown here</h1>
       </div>
