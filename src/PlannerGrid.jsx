@@ -44,7 +44,6 @@ const PlannerGrid = () => {
         ) : (
           <div className="flex flex-col items-center justify-center py-20 text-slate-400 gap-2">
             <h1 className="text-lg">Your day is clear!</h1>
-            <p className="text-sm">Click "Add event/task" to get started.</p>
           </div>
         )}
       </div>
