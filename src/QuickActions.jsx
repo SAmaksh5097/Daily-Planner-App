@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Notepad from './Notepad'
+import Notepad from './Components/Notepad'
 import { ListPlus } from 'lucide-react'
 import { PlannerContext } from './Context/PlannerContext'
 

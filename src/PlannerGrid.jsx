@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { PlannerContext } from './Context/PlannerContext'
-import Form from './Form'
-import TaskCard from './TaskCard'
+
+import Form from './Components/Form'
+import TaskCard from './Components/TaskCard'
 
 const PlannerGrid = () => {
   const { tasks, selectedDate, setSelectedDate, isFormOpen } = useContext(PlannerContext)

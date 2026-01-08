@@ -1,6 +1,6 @@
 import { X } from 'lucide-react'
 import React, { useContext, useEffect, useState } from 'react'
-import { PlannerContext } from './Context/PlannerContext'
+import { PlannerContext } from '../Context/PlannerContext'
 
 const Form = () => {
     const {addtask, setIsFormOpen, selectedDate, editingTask, setEditingTask, updatetask} = useContext(PlannerContext)

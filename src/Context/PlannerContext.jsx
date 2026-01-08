@@ -9,7 +9,6 @@ export const PlannerProvider = ({children})=>{
     })
     const [isFormOpen,setIsFormOpen] = useState(false)
     const [editingTask,setEditingTask] = useState(null)
-
     
     useEffect(()=>{
         localStorage.setItem("tasks",JSON.stringify(tasks));
@@ -23,8 +22,13 @@ export const PlannerProvider = ({children})=>{
         setTasks(tasks.map(task=>task.id===id?{...task,...updates}:task))
     };
 
+    const [selected,setSelected] = useState("dashboard")
+
+    
+    
+
     return(
-        <PlannerContext.Provider value={{tasks,selectedDate,setSelectedDate,addtask,updatetask,isFormOpen,setIsFormOpen, editingTask, setEditingTask}}>
+        <PlannerContext.Provider value={{tasks,selectedDate,setSelectedDate,addtask,updatetask,isFormOpen,setIsFormOpen, editingTask, setEditingTask, selected, setSelected}}>
                 {children}
             </PlannerContext.Provider>
     )

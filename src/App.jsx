@@ -1,3 +1,4 @@
+import AnalyticsPage from "./AnalyticsPage"
 import Header from "./Header"
 import PlannerGrid from "./PlannerGrid"
 import QuickActions from "./QuickActions"
@@ -11,6 +12,7 @@ function App() {
         <PlannerGrid/>
         <QuickActions/>
       </div>
+      <AnalyticsPage/>
     </div>
   )
 }

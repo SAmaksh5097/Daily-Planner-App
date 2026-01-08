@@ -1,10 +1,11 @@
 import React from 'react'
-import Weather from './Weather'
+import Weather from './Components/Weather'
 
 const SideBar = () => {
   return (
-    <div className=' w-full lg:w-[20%] p-2 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800 transition-all ease-in-out '>
+    <div className=' w-full lg:w-[20%] p-2 border-b lg:border-b-0 lg:border-r border-slate-200 dark:border-slate-800 transition-all ease-in-out flex flex-col gap-4 '>
         <Weather/>
+        
     </div>
   )
 }

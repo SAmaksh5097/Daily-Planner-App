@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Clock, AlignLeft, PencilIcon, CircleCheckBig } from 'lucide-react';
-import { PlannerContext } from './Context/PlannerContext';
+import { PlannerContext } from '../Context/PlannerContext';
 
 const TaskCard = ({ task }) => {
   const {updatetask, setIsFormOpen, setEditingTask} = useContext(PlannerContext)
