@@ -1,21 +1,36 @@
 import { X } from 'lucide-react'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { PlannerContext } from './Context/PlannerContext'
 
 const Form = () => {
-    const {addtask, setIsFormOpen, selectedDate} = useContext(PlannerContext)
+    const {addtask, setIsFormOpen, selectedDate, editingTask, setEditingTask, updatetask} = useContext(PlannerContext)
     const [formdata, setFormData] = useState({
         title:'', start:'',end:'',date:selectedDate,note:''
     })
 
+    useEffect(()=>{
+        if(editingTask){
+            setFormData(editingTask)
+        }
+    },[editingTask])
     const handlechange = (e)=>{
         const { id, value } = e.target;
         setFormData(prev => ({ ...prev, [id]: value }));
     }
     const handlesubmit = (e)=>{
         e.preventDefault()
-        addtask(formdata)
+        if(editingTask){
+            updatetask(editingTask.id, formdata)
+        }
+        else{
+            addtask(formdata)
+        }
+        handleclose()
+    }
+    const handleclose = ()=>{
         setIsFormOpen(false)
+        setEditingTask(null)
+        
     }
     
   return (
@@ -45,7 +60,7 @@ const Form = () => {
                     <textarea name="note" id="note" value={formdata.note} onChange={handlechange} placeholder='Add any details...' className='border w-full rounded-md bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500/20 p-1 min-h-30 outline-blue-400' ></textarea>
                 </div>
                 <div className=' pb-2 flex justify-end gap-5'>
-                    <button onClick={()=>{setIsFormOpen(false)}} className='cursor-pointer transition-all ease-in-out hover:bg-gray-400 rounded-md p-2'>Cancel</button>
+                    <button onClick={handleclose} className='cursor-pointer transition-all ease-in-out hover:bg-gray-400 rounded-md p-2'>Cancel</button>
                     <button type='submit' className='bg-blue-600 p-2 rounded-md text-white cursor-pointer shadow-md hover:bg-blue-900 transition-all ease-in-out'>Save Task</button>
                 </div>
             </form>

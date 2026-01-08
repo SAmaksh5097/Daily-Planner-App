@@ -8,6 +8,8 @@ export const PlannerProvider = ({children})=>{
         return saved?JSON.parse(saved):[]
     })
     const [isFormOpen,setIsFormOpen] = useState(false)
+    const [editingTask,setEditingTask] = useState(null)
+
     
     useEffect(()=>{
         localStorage.setItem("tasks",JSON.stringify(tasks));
@@ -22,7 +24,7 @@ export const PlannerProvider = ({children})=>{
     };
 
     return(
-        <PlannerContext.Provider value={{tasks,selectedDate,setSelectedDate,addtask,updatetask,isFormOpen,setIsFormOpen}}>
+        <PlannerContext.Provider value={{tasks,selectedDate,setSelectedDate,addtask,updatetask,isFormOpen,setIsFormOpen, editingTask, setEditingTask}}>
                 {children}
             </PlannerContext.Provider>
     )
