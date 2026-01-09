@@ -33,8 +33,9 @@ const Form = () => {
         
     }
 
-    const handlecategorychange = (e)=>{
-      setCategory(e.target.value)
+    const handlecategorychange = (name)=>{
+      setCategory(name)
+      setFormData(prev=>({...prev,category:name}))
     }
     
     console.log(options);
@@ -76,7 +77,7 @@ const Form = () => {
             hover:bg-gray-100
             dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700
             dark:hover:bg-slate-700
-          `}`} value={op.name} type='button' key={op.name} onClick={handlecategorychange}>
+          `}`} value={op.name} type='button' key={op.name} onClick={()=>handlecategorychange(op.name)}>
                 <div className={`w-2 h-2 rounded-full ${op.color}`}></div>
                 {op.name}</button>
             ))}
