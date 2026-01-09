@@ -13,6 +13,7 @@ const PlannerGrid = () => {
 
   const dailytasks = tasks.filter(task => task.date === selectedDate).sort((a,b)=>a.start.localeCompare(b.start))
 
+  
   return (
     <div className='w-full lg:flex-1 px-4 lg:px-10 py-5 bg-slate-100 dark:bg-slate-900 border-x border-slate-200 dark:border-slate-800 flex flex-col gap-4 items-center relative overflow-y-auto h-screen no-scrollbar'>
       

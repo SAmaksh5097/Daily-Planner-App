@@ -26,11 +26,20 @@ export const PlannerProvider = ({children})=>{
 
     const [selected,setSelected] = useState("dashboard")
 
+    const options = [
+        {name:'Work', color:'bg-blue-500'},
+        {name:'Personal', color:'bg-purple-500'},
+        {name:'Exercise', color:'bg-green-500'},
+        {name:'Deep Work', color:'bg-orange-500'},
+        {name:'Misc', color:'bg-red-500'}
+    ]
+    const [category,setCategory] = useState("Work")
+
     
     
 
     return(
-        <PlannerContext.Provider value={{tasks,selectedDate,setSelectedDate,addtask,updatetask,isFormOpen,setIsFormOpen, editingTask, setEditingTask, selected, setSelected}}>
+        <PlannerContext.Provider value={{tasks,selectedDate,setSelectedDate,addtask,updatetask,isFormOpen,setIsFormOpen, editingTask, setEditingTask, selected, setSelected, options, category, setCategory}}>
                 {children}
             </PlannerContext.Provider>
     )

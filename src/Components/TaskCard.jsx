@@ -11,6 +11,8 @@ const TaskCard = ({ task }) => {
   }
   const completed = task.status==='completed'
 
+  
+
 
   return (
     <div className="w-full p-4 mb-3 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl hover:shadow-md transition-shadow dark:hover:shadow-neutral-600">
