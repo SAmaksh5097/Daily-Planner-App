@@ -13,7 +13,7 @@ const TaskCard = ({ task }) => {
 
 
   return (
-    <div className="w-full p-4 mb-3 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl hover:shadow-md transition-shadow">
+    <div className="w-full p-4 mb-3 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl hover:shadow-md transition-shadow dark:hover:shadow-neutral-600">
       <div className="flex justify-between items-start mb-2">
         <h3 className={`font-bold text-lg text-slate-900 dark:text-white capitalize ${completed?'line-through':''}` }>
           {task.title}
