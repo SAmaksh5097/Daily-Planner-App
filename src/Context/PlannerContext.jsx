@@ -11,11 +11,13 @@ export const PlannerProvider = ({children})=>{
     const [editingTask,setEditingTask] = useState(null)
     
     useEffect(()=>{
-        localStorage.setItem("tasks",JSON.stringify(tasks));
+        if(tasks.length>0 || localStorage.getItem('tasks')){
+            localStorage.setItem("tasks",JSON.stringify(tasks));
+        }
     },[tasks])
 
     const addtask = (task)=>{
-        setTasks([...tasks,{...task,id:crypto.randomUUID(),status:'pending'}])
+        setTasks((prevtasks)=>[...prevtasks,{...task,id:crypto.randomUUID(),status:'pending'}])
     };
 
     const updatetask = (id,updates)=>{
