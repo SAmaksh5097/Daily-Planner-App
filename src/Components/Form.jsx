@@ -3,9 +3,10 @@ import React, { useContext, useEffect, useState } from 'react'
 import { PlannerContext } from '../Context/PlannerContext'
 
 const Form = () => {
-    const {addtask, setIsFormOpen, selectedDate, editingTask, setEditingTask, updatetask, options, category, setCategory } = useContext(PlannerContext)
+    const {addtask, setIsFormOpen, selectedDate, editingTask, setEditingTask, updatetask, options } = useContext(PlannerContext)
+
     const [formdata, setFormData] = useState({
-        title:'', start:'',end:'',date:selectedDate, category:'Work',note:''
+        title:'', start:'',end:'',date:selectedDate,note:'',category:'Work'
     })
 
     useEffect(()=>{
@@ -13,10 +14,12 @@ const Form = () => {
             setFormData(editingTask)
         }
     },[editingTask])
+
     const handlechange = (e)=>{
         const { id, value } = e.target;
         setFormData(prev => ({ ...prev, [id]: value }));
     }
+
     const handlesubmit = (e)=>{
         e.preventDefault()
         if(editingTask){
@@ -27,18 +30,14 @@ const Form = () => {
         }
         handleclose()
     }
+
     const handleclose = ()=>{
         setIsFormOpen(false)
         setEditingTask(null)
         
     }
-
-    const handlecategorychange = (name)=>{
-      setCategory(name)
-      setFormData(prev=>({...prev,category:name}))
-    }
     
-    console.log(options);
+
     
   return (
     <div className='border flex flex-col gap-5 rounded-2xl w-full max-w-md bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800'>
@@ -63,26 +62,14 @@ const Form = () => {
                     <input type="date" id='date' required value={formdata.date} onChange={handlechange} className='border w-full rounded-md bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500/20 p-1 outline-blue-400' />
                 </div>
 
-                <div className='flex flex-col gap-2 w-full justify-center'>
-                    <h1>Category</h1>
-                    <div className='flex gap-2'>
-                        {options.map((op)=>(
-                            <button  className={`cursor-pointer rounded-2xl flex items-center gap-2 px-2 text-sm w-[20%] ${category === op.name
-                                    ? `
-            bg-gray-200 text-gray-900 font-bold border-gray-300
-            dark:bg-slate-700 dark:text-slate-100 dark:border-slate-600
-          `
-          : `
-            bg-gray-50 text-gray-600 border-gray-200
-            hover:bg-gray-100
-            dark:bg-slate-800 dark:text-slate-400 dark:border-slate-700
-            dark:hover:bg-slate-700
-          `}`} value={op.name} type='button' key={op.name} onClick={()=>handlecategorychange(op.name)}>
-                <div className={`w-2 h-2 rounded-full ${op.color}`}></div>
-                {op.name}</button>
-            ))}
-          </div>
-        </div>
+                <div className='flex items-center gap-2'>
+                    <label htmlFor="category">Category:</label>
+                    <select name="category" id="category" value={formdata.category} onChange={handlechange} className='border w-full rounded-md bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-blue-500/20 p-1 outline-blue-400 cursor-pointer '>
+                    {options.map((op)=>(
+                        <option value={op.name}>{op.name}</option>
+                    ))}
+                    </select>
+                </div>
 
                 <div className=''>
                     <label htmlFor="note">Notes</label>

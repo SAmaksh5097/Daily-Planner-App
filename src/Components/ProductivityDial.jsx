@@ -6,7 +6,6 @@ const ProductivityDial = () => {
     const total = tasks.filter(task=>task.date===selectedDate).length;
     const completed = tasks.filter(task=>task.status==='completed' && task.date===selectedDate).length
 
-    console.log(total,completed);
     const percentage = total>0?(completed/total):0;
 
     

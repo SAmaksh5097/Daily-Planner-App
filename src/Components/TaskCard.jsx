@@ -3,7 +3,7 @@ import { Clock, AlignLeft, PencilIcon, CircleCheckBig } from 'lucide-react';
 import { PlannerContext } from '../Context/PlannerContext';
 
 const TaskCard = ({ task }) => {
-  const {updatetask, setIsFormOpen, setEditingTask} = useContext(PlannerContext)
+  const {updatetask, setIsFormOpen, setEditingTask, options} = useContext(PlannerContext)
 
   const handedit = ()=>{
     setIsFormOpen(true)
@@ -11,9 +11,15 @@ const TaskCard = ({ task }) => {
   }
   const completed = task.status==='completed'
 
+  const x = options.filter((op)=>{op.name===task.category})
+  
+  const categoryconfig = options.find(cat=>cat.name===task.category)
+  
+  
+  
 
   return (
-    <div className="w-full p-4 mb-3 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl hover:shadow-md transition-shadow dark:hover:shadow-neutral-600">
+    <div className={`w-full p-4 mb-3 flex flex-col gap-3 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-t-slate-600 dark:border-b-slate-600 dark:border-r-slate-600 rounded-xl hover:shadow-md transition-shadow dark:hover:shadow-neutral-600 ${categoryconfig.color} border-l-6 `}>
       <div className="flex justify-between items-start mb-2">
         <h3 className={`font-bold text-lg text-slate-900 dark:text-white capitalize ${completed?'line-through':''}` }>
           {task.title}
@@ -29,13 +35,16 @@ const TaskCard = ({ task }) => {
           <Clock className="w-4 h-4" />
           <span>{task.start} — {task.end || 'No end time'}</span>
         </div>
-        
         {task.note && (
           <div className="flex items-start gap-2">
             <AlignLeft className="w-4 h-4 mt-1" />
             <p className="line-clamp-2 italic">{task.note}</p>
           </div>
         )}
+      </div>
+      <div className='flex items-center gap-1'>
+        <div className={`w-2 h-2 rounded-full ${categoryconfig.bgcolor}`}></div>
+        <h1 className='text-sm text-slate-600 dark:text-slate-400 italic'>{task.category}</h1>
       </div>
     </div>
   );

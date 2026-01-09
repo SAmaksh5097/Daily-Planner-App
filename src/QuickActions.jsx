@@ -5,7 +5,6 @@ import { PlannerContext } from './Context/PlannerContext'
 
 const QuickActions = () => {
   const {setIsFormOpen, isFormOpen, setEditingTask} = useContext(PlannerContext)
-  console.log(isFormOpen)
 
   const handleclick = ()=>{
     setIsFormOpen(true)
