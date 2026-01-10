@@ -3,6 +3,7 @@ import { PlannerContext } from './Context/PlannerContext'
 import APHeader from './Components/APHeader'
 import MetricCard from './Components/MetricCard'
 import { motion, AnimatePresence } from 'framer-motion'
+import WeeklyProgress from './Components/WeeklyProgress'
 
 const AnalyticsPage = () => {
   
@@ -31,8 +32,8 @@ const AnalyticsPage = () => {
           <MetricCard name="Total Tasks" total = {total} completed={completed} heading="tasks completed"/>
           <MetricCard name="Completion Rate" total = {total} completed={completed} heading="%"/>
         </AnimatePresence>
-
       </div>
+      <WeeklyProgress startDate={startDate} endDate={endDate} tasks={filtertask}/>
 
         
     </div>
