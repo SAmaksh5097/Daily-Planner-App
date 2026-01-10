@@ -5,7 +5,7 @@ import QuickActions from './QuickActions'
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-col lg:flex-row flex-1 overflow-x-hidden items-stretch bg-transparent dark:bg-gray-600 w-full ">
+    <div className="flex flex-col lg:flex-row flex-1 items-stretch bg-transparent dark:bg-gray-600 w-full ">
         <SideBar/>
         <PlannerGrid/>
         <QuickActions/>

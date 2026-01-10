@@ -21,15 +21,17 @@ const Header = () => {
       <Link to={'/'}>
         <h1 className='text-2xl font-bold flex gap-2 items-center '>{<CalendarCheck2 className=' rounded w-10 h-10 text-blue-600 dark:text-blue-400'/>} Daily Planner</h1>
       </Link>
-        <div className='flex gap-10'>
-          <Link to={'/'}>
-            <MenuButton name="Dashboard"/>
-          </Link>
-          <Link to={'/analytics'}>
-            <MenuButton name="Analytics"/>
-          </Link>
-        </div>
-        <ThemeToggle/>
+      <div className='flex gap-5 items-center'>
+          <div className='flex gap-5'>
+            <Link to={'/'}>
+              <MenuButton name="Dashboard"/>
+            </Link>
+            <Link to={'/analytics'}>
+              <MenuButton name="Analytics"/>
+            </Link>
+          </div>
+          <ThemeToggle/>
+      </div>
     </div>
   )
 }
