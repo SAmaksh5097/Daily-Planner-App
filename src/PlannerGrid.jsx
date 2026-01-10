@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { PlannerContext } from './Context/PlannerContext'
-
+import { AnimatePresence } from 'framer-motion'
 import Form from './Components/Form'
 import TaskCard from './Components/TaskCard'
 
@@ -41,9 +41,11 @@ const PlannerGrid = () => {
 
         {dailytasks.length > 0 ? (
           <div className="flex flex-col w-full gap-3">
-             {dailytasks.map(task => (
-               <TaskCard key={task.id} task={task} />
-             ))}
+            <AnimatePresence mode='popLayout'>
+              {dailytasks.map(task => (
+                <TaskCard key={task.id} task={task} />
+              ))}
+            </AnimatePresence>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center py-20 text-slate-400 gap-2">

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { Clock, AlignLeft, PencilIcon, CircleCheckBig } from 'lucide-react';
+import { Clock, AlignLeft, PencilIcon, CircleCheckBig, Trash2 } from 'lucide-react';
 import { PlannerContext } from '../Context/PlannerContext';
-
+import { motion } from 'framer-motion';
 const TaskCard = ({ task }) => {
-  const {updatetask, setIsFormOpen, setEditingTask, options} = useContext(PlannerContext)
+  const {updatetask, setIsFormOpen, setEditingTask, options, deletetask} = useContext(PlannerContext)
 
   const handedit = ()=>{
     setIsFormOpen(true)
@@ -19,7 +19,7 @@ const TaskCard = ({ task }) => {
   
 
   return (
-    <div className={`w-full p-4 mb-3 flex flex-col gap-3 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-t-slate-600 dark:border-b-slate-600 dark:border-r-slate-600 rounded-xl hover:shadow-md transition-shadow dark:hover:shadow-neutral-600 ${categoryconfig.color} border-l-6 `}>
+    <motion.div layout initial={{opacity:0,y:20}} animate={{opacity:1, y:0}} exit={{ opacity: 0, x: -50, transition: { duration: 0.2 } }} className={`w-full p-4 mb-3 flex flex-col gap-3 bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-t-slate-600 dark:border-b-slate-600 dark:border-r-slate-600 rounded-xl hover:shadow-md transition-shadow dark:hover:shadow-neutral-600 ${categoryconfig.color} border-l-6 `}>
       <div className="flex justify-between items-start mb-2">
         <h3 className={`font-bold text-lg text-slate-900 dark:text-white capitalize ${completed?'line-through':''}` }>
           {task.title}
@@ -27,6 +27,7 @@ const TaskCard = ({ task }) => {
         <div className='flex gap-5'>
           <CircleCheckBig className={`cursor-pointer hover:scale-120 transition-all ease-in-out ${completed?'text-green-500':''}`} onClick={()=>{updatetask(task.id,{status:task.status==='completed'?'pending':'completed'})}}/>
           <PencilIcon onClick={handedit} className='cursor-pointer hover:scale-120 transition-all ease-in-out'/>
+          <Trash2 className='cursor-pointer hover:scale-120 transition-all ease-in-out' onClick={()=>deletetask(task.id)}/>
         </div>
       </div>
 
@@ -46,7 +47,7 @@ const TaskCard = ({ task }) => {
         <div className={`w-2 h-2 rounded-full ${categoryconfig.bgcolor}`}></div>
         <h1 className='text-sm text-slate-600 dark:text-slate-400 italic'>{task.category}</h1>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

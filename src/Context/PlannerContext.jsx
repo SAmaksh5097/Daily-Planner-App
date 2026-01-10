@@ -24,6 +24,10 @@ export const PlannerProvider = ({children})=>{
         setTasks(tasks.map(task=>task.id===id?{...task,...updates}:task))
     };
 
+    const deletetask = (id)=>{
+        setTasks(tasks.filter(task=>task.id!==id))
+    }
+
     const [selected,setSelected] = useState("dashboard")
 
     const options = [
@@ -38,7 +42,7 @@ export const PlannerProvider = ({children})=>{
     
 
     return(
-        <PlannerContext.Provider value={{tasks,selectedDate,setSelectedDate,addtask,updatetask,isFormOpen,setIsFormOpen, editingTask, setEditingTask, selected, setSelected, options}}>
+        <PlannerContext.Provider value={{tasks,selectedDate,setSelectedDate,addtask,updatetask,isFormOpen,setIsFormOpen, editingTask, setEditingTask, selected, setSelected, options, deletetask}}>
                 {children}
             </PlannerContext.Provider>
     )
