@@ -3,7 +3,7 @@ import React from 'react'
 
 const APHeader = ({ startDate, setStartDate, endDate, setEndDate }) => {
   return (
-    <div className='border-b pb-4 border-slate-200 dark:border-slate-800 transition-colors'>
+    <div className='border-b pb-4 border-slate-200 dark:border-gray-600 transition-colors'>
         <div className='flex gap-4 items-center text-sm font-bold text-slate-400'> 
             <ChartColumn className='rounded w-10 h-10 text-blue-600 dark:text-blue-400 bg-slate-200 dark:bg-slate-800 p-2' />
             <h1>ANALYTICS DASHBOARD</h1>
