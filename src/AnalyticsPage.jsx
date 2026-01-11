@@ -25,7 +25,7 @@ const AnalyticsPage = () => {
   const completed = filtertask.filter(task=>task.status==="completed").length;
     
   return (
-    <div className='w-full h-screen px-4 py-2 flex flex-col gap-4 bg-white dark:bg-slate-800'>
+    <div className='w-full h-screen px-4 py-2 flex flex-col gap-4 bg-white dark:bg-slate-800 '>
       <APHeader startDate={startDate} endDate={endDate} setEndDate={setEndDate} setStartDate={setStartDate}/>
       <div className='flex justify-evenly gap-4'>
         <AnimatePresence mode='popLayout'>
@@ -33,7 +33,9 @@ const AnalyticsPage = () => {
           <MetricCard name="Completion Rate" total = {total} completed={completed} heading="%"/>
         </AnimatePresence>
       </div>
-      <WeeklyProgress startDate={startDate} endDate={endDate} tasks={filtertask}/>
+      <div className='w-full flex justify-center'>
+        <WeeklyProgress startDate={startDate} endDate={endDate} tasks={filtertask}/>
+      </div>
 
         
     </div>
