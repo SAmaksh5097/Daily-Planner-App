@@ -26,15 +26,15 @@ const AnalyticsPage = () => {
   const completed = filtertask.filter(task=>task.status==="completed").length;
     
   return (
-    <div className='min-w-fit w-full min-h-fit h-screen px-4 py-2 flex flex-col gap-4 bg-white dark:bg-slate-800 '>
+    <div className='flex-1 w-full overflow-y-auto px-4 py-6 flex flex-col gap-6 bg-white dark:bg-slate-800 transition-colors duration-300 '>
       <APHeader startDate={startDate} endDate={endDate} setEndDate={setEndDate} setStartDate={setStartDate}/>
-      <div className='flex justify-evenly gap-4'>
+      <div className=' justify-evenly gap-4 flex flex-col md:flex-row'>
         <AnimatePresence mode='popLayout'>
           <MetricCard name="Total Tasks" total = {total} completed={completed} heading="tasks completed"/>
           <MetricCard name="Completion Rate" total = {total} completed={completed} heading="%"/>
         </AnimatePresence>
       </div>
-      <div className='w-full flex justify-center gap-5 items-center'>
+      <div className=' w-full flex flex-col lg:flex-row justify-center items-center gap-5'>
         <WeeklyProgress startDate={startDate} endDate={endDate} tasks={filtertask}/>
         <Focus tasks={filtertask}/>
       </div>

@@ -54,7 +54,7 @@ const WeeklyProgress = ({tasks}) => {
             </div>
         </div>
         
-        <div className='w-full'>
+        <div className=' w-full overflow-x-auto no-scrollbar'>
             <div className='flex justify-between items-end h-48 gap-2 w-full'>
                 {chartData.map((data,index) => (
                     <div key={index} className='flex flex-col items-center gap-2 flex-1 h-full justify-end group cursor-pointer'>

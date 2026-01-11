@@ -17,7 +17,7 @@ const PlannerGrid = () => {
   
   
   return (
-    <div className='w-full lg:flex-1 px-4 lg:px-10 py-5 bg-slate-100 dark:bg-slate-900 border-x border-slate-200 dark:border-slate-800 flex flex-col gap-4 items-center relative overflow-y-auto h-screen no-scrollbar'>
+    <div className='order-2 lg:order-0 w-full lg:flex-1 px-4 lg:px-10 py-5 bg-slate-100 dark:bg-slate-900 border-x border-slate-200 dark:border-slate-800 flex flex-col gap-4 items-center relative overflow-y-auto h-screen no-scrollbar'>
       
       <div className='flex gap-4 w-full justify-center lg:justify-start top-0 bg-inherit py-2 z-10'>
         <input 

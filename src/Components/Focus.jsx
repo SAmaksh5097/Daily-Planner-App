@@ -51,37 +51,37 @@ const Focus = ({ tasks }) => {
     const totalCompleted = tasks.filter(t => t.status === 'completed').length
 
     return (
-        <div className='flex-1 border rounded-2xl p-6  w-full lg:w-1/3 flex flex-col  border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-700/50 shadow-md '>
+        <div className='border rounded-2xl p-6 w-full lg:w-1/3 flex flex-col border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-700/50 shadow-md h-full min-h-[350px]'>
             <div className='mb-6'>
                 <h2 className='font-bold text-lg text-slate-900 dark:text-white'>Focus Breakdown</h2>
                 <p className='text-slate-400 text-sm'>Completed tasks by category</p>
             </div>
 
-            <div className='flex-1 flex flex-col items-center justify-center gap-6'>
+            <div className='flex-1 flex flex-col items-center justify-center gap-8'>
                 <div 
-                    className='w-40 h-40 rounded-full flex items-center justify-center transition-all duration-500'
+                    className='w-48 h-48 rounded-full flex items-center justify-center transition-all duration-500 shadow-xl shadow-slate-200/50 dark:shadow-none'
                     style={{ background: gradient }}
                 >
-                    <div className='w-28 h-28 bg-white dark:bg-[#1e293b] rounded-full flex flex-col items-center justify-center z-10'>
-                        <span className='text-3xl font-bold text-slate-900 dark:text-white'>{totalCompleted}</span>
-                        <span className='text-[10px] text-slate-400 uppercase tracking-widest'>Done</span>
+                    <div className='w-32 h-32 bg-white dark:bg-[#1e293b] rounded-full flex flex-col items-center justify-center z-10'>
+                        <span className='text-4xl font-bold text-slate-900 dark:text-white'>{totalCompleted}</span>
+                        <span className='text-[10px] text-slate-400 uppercase tracking-widest font-bold mt-1'>Done</span>
                     </div>
                 </div>
 
-                <div className='grid grid-cols-2 gap-x-6 gap-y-3 w-full px-2'>
+                <div className='grid grid-cols-2 gap-x-8 gap-y-4 w-full px-2'>
                     {categoryData.length > 0 ? categoryData.map(cat => (
-                        <div key={cat.name} className='flex items-center gap-2'>
-                            <div className='w-2 h-2 rounded-full' style={{backgroundColor: cat.color}}></div>
+                        <div key={cat.name} className='flex items-center gap-3'>
+                            <div className='w-3 h-3 rounded-full shadow-sm' style={{backgroundColor: cat.color}}></div>
                             <div className='flex flex-col'>
-                                <span className='text-xs font-bold text-slate-700 dark:text-slate-200'>
+                                <span className='text-sm font-bold text-slate-700 dark:text-slate-200'>
                                     {Math.round(cat.percentage)}%
                                 </span>
-                                <span className='text-[10px] text-slate-400 uppercase'>{cat.name}</span>
+                                <span className='text-[10px] font-medium text-slate-400 uppercase tracking-wider'>{cat.name}</span>
                             </div>
                         </div>
                     )) : (
-                        <p className='text-xs text-slate-500 col-span-2 text-center italic'>
-                            No completed tasks in this period
+                        <p className='text-sm text-slate-500 col-span-2 text-center italic py-4'>
+                            No completed tasks yet
                         </p>
                     )}
                 </div>

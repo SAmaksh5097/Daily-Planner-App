@@ -44,7 +44,7 @@ const Weather = () => {
     }
 
     return (
-        <div className='w-70 max-h-fit p-4 rounded-2xl flex flex-col gap-3 outline-0 relative bg-gradient-to-br from-blue-600 to-indigo-900 text-white transition-all ease-in-out'>
+        <div className='w-full max-w-sm mx-auto p-4 rounded-2xl flex flex-col gap-3 outline-0 relative bg-gradient-to-br from-blue-600 to-indigo-900 text-white transition-all ease-in-out shadow-lg'>
             <div className='flex justify-between items-start'>
                 <button 
                     onClick={getlocation}
