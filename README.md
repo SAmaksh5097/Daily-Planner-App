@@ -3,7 +3,11 @@
 A modern, responsive, and feature-rich daily planner application built with React and Vite. This app helps users manage their daily schedules, track productivity with custom analytics, and persist data locally.
 
 ![Project Banner](https://via.placeholder.com/1200x600?text=Daily+Planner+Preview)
-> *Note: Add a screenshot of your dashboard here.*
+DashBoard
+<img width="1908" height="971" alt="image" src="https://github.com/user-attachments/assets/126747c9-0ddb-4900-bc17-6e2de836361f" />
+
+Analytics Page
+<img width="1910" height="963" alt="image" src="https://github.com/user-attachments/assets/99eedb80-4323-49e9-9d80-3e110bd2ee83" />
 
 ## 🚀 Features
 
