@@ -38,7 +38,7 @@ const WeeklyProgress = ({tasks}) => {
     const maxTasks = Math.max(...chartData.map(d => d.total)) || 5
 
   return (
-    <div className='border p-4 rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-700/50 shadow-md shadow-gray-400 w-full lg:w-2/3'>
+    <div className='border p-4 rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-700/50 shadow-md  w-full h-fit lg:w-2/3'>
         <h1 className='text-2xl font-medium'>Weekly Progress</h1>
         <div className='flex justify-between mb-4'>
             <h1 className='text-sm text-slate-400'>Tasks Completed vs. Pending</h1>

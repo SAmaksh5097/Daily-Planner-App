@@ -4,6 +4,7 @@ import APHeader from './Components/APHeader'
 import MetricCard from './Components/MetricCard'
 import { motion, AnimatePresence } from 'framer-motion'
 import WeeklyProgress from './Components/WeeklyProgress'
+import Focus from './Components/Focus'
 
 const AnalyticsPage = () => {
   
@@ -25,7 +26,7 @@ const AnalyticsPage = () => {
   const completed = filtertask.filter(task=>task.status==="completed").length;
     
   return (
-    <div className='w-full h-screen px-4 py-2 flex flex-col gap-4 bg-white dark:bg-slate-800 '>
+    <div className='min-w-fit w-full min-h-fit h-screen px-4 py-2 flex flex-col gap-4 bg-white dark:bg-slate-800 '>
       <APHeader startDate={startDate} endDate={endDate} setEndDate={setEndDate} setStartDate={setStartDate}/>
       <div className='flex justify-evenly gap-4'>
         <AnimatePresence mode='popLayout'>
@@ -33,8 +34,9 @@ const AnalyticsPage = () => {
           <MetricCard name="Completion Rate" total = {total} completed={completed} heading="%"/>
         </AnimatePresence>
       </div>
-      <div className='w-full flex justify-center'>
+      <div className='w-full flex justify-center gap-5 items-center'>
         <WeeklyProgress startDate={startDate} endDate={endDate} tasks={filtertask}/>
+        <Focus tasks={filtertask}/>
       </div>
 
         
