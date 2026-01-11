@@ -1,16 +1,42 @@
-# React + Vite
+# 📅 Daily Planner & Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and feature-rich daily planner application built with React and Vite. This app helps users manage their daily schedules, track productivity with custom analytics, and persist data locally.
 
-Currently, two official plugins are available:
+![Project Banner](https://via.placeholder.com/1200x600?text=Daily+Planner+Preview)
+> *Note: Add a screenshot of your dashboard here.*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+### ✅ Task Management
+- **CRUD Operations**: Add, Edit, Delete, and Complete tasks effortlessly.
+- **Categorization**: Organize tasks by categories like Work, Personal, Exercise, Deep Work, and Misc.
+- **Visual Cues**: Color-coded borders and indicators for different categories.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📊 Productivity Analytics
+- **Custom Charts**:
+  - **Weekly Progress**: Stacked bar chart visualizing completed vs. pending tasks over a selected date range.
+  - **Focus Breakdown**: Donut chart (CSS Conic Gradient) showing task distribution by category.
+- **Key Metrics**: Real-time stats for "Total Tasks" and "Completion Rate".
+- **Date Filtering**: Analyze performance for any specific date range.
 
-## Expanding the ESLint configuration
+### 🎨 User Experience (UX)
+- **Dark Mode**: Fully supported toggleable dark/light theme.
+- **Responsive Design**: Optimized layout for Mobile, Tablet, and Desktop devices.
+- **Animations**: Smooth transitions and exit animations using `framer-motion`.
+- **Glassmorphism UI**: Modern aesthetic with translucent headers and cards.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🛠️ Utilities
+- **Weather Widget**: Real-time temperature and conditions based on your location (via Open-Meteo API).
+- **Persistent Notepad**: A scratchpad that saves your notes automatically to local storage.
+- **Data Persistence**: All tasks and settings are saved to `localStorage`, so you never lose data on refresh.
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: [React](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **HTTP Client**: [Axios](https://axios-http.com/) (for Weather API)
+- **Routing**: [React Router DOM](https://reactrouter.com/)
+=
